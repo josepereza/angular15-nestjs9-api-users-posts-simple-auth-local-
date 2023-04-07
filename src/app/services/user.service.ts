@@ -5,9 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class UserService {
-  username: string = '';
-  password: string = '';
-  url = 'http://localhost/';
+ 
   constructor(private httpClient: HttpClient) {}
 
   login(usuario: any) {
