@@ -25,4 +25,8 @@ export class UserService {
        
     return this.httpClient.post(url, body, httpOptions );
   }
+
+  register(usuario: any) {
+    return this.httpClient.post('http://localhost:3000/user', usuario);
+  }
 }

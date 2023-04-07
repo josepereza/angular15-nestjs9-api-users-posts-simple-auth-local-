@@ -1,7 +1,7 @@
 <div class="container">
-  <h2>Login</h2>
+    <h2>Register</h2>
     <main class="form-signin w-100 m-auto">
-        <form [formGroup]="loginForm" (ngSubmit)="login()"> 
+        <form [formGroup]="loginForm" (ngSubmit)="register()"> 
         
           <h1 class="h3 mb-3 fw-normal mt-3">Please sign in</h1>
       
@@ -20,7 +20,6 @@
             </label>
           </div>
           <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-          <a  class="btn btn-lg btn-primary mt-3" routerLink="/register">Register</a>
           <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
         </form>
       </main>
