@@ -25,7 +25,44 @@
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Prueba en terminal
+```
+$ # POST to /auth/login
+$ curl -X POST http://localhost:3000/auth/login -d '{"username": "john", "password": "changeme"}' -H "Content-Type: application/json"
+$ # result -> {"userId":1,"username":"john"}
+```
+## Prueba en angular
+```
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+@Injectable({
+  providedIn: 'root',
+})
+export class UserService {
+ 
+  constructor(private httpClient: HttpClient) {}
+
+  login(usuario: any) {
+    return this.httpClient.post('http://localhost:3000/auth/login', usuario);
+  }
+  getAll() {
+    const url = 'http://localhost:3000/user/users';
+    const username = localStorage.getItem('username');
+    const password = localStorage.getItem('password');
+    const body = { username, password };
+    console.log('mi body', body);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+       
+    return this.httpClient.post(url, body, httpOptions );
+  }
+}
+
+```
 ## Installation
 
 ```bash
