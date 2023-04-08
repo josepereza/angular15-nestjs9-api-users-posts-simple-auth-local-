@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { UsersComponent } from './pages/users/users.component';
+import { UserGuard } from './user.guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/users',
     pathMatch: 'full',
   },
   {
@@ -19,8 +20,13 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
-    path:'user', component:UsersComponent
-  }
+    path:'users', component:UsersComponent,canActivate: [UserGuard] 
+  },
+  {
+    path: '**',
+    redirectTo: '/users',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
