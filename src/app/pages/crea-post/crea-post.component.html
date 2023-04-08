@@ -1,0 +1,12 @@
+<form [formGroup]="postForm" (ngSubmit)="enviarPost()">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Titulo</span>
+        <input type="text" class="form-control" placeholder="Titulo" formControlName="title" aria-label="Titulo" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group">
+        <span class="input-group-text">With textarea</span>
+        <textarea class="form-control" formControlName="content" aria-label="With textarea"></textarea>
+      </div>
+      <button type="submit">Enviar</button>
+</form>

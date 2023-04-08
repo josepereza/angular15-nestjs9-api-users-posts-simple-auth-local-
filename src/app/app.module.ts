@@ -11,9 +11,10 @@ import { PostsComponent } from './pages/posts/posts.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CreaPostComponent } from './pages/crea-post/crea-post.component';
 
 @NgModule({
-  declarations: [AppComponent, UsersComponent, PostsComponent, LoginComponent, RegisterComponent, NavbarComponent],
+  declarations: [AppComponent, UsersComponent, PostsComponent, LoginComponent, RegisterComponent, NavbarComponent, CreaPostComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

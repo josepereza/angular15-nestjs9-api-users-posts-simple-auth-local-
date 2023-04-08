@@ -26,7 +26,7 @@ export class LoginComponent {
       console.log('form',this.loginForm.value.username)
       localStorage.setItem('username', this.loginForm.value.username!);
       localStorage.setItem('password',this.loginForm.value.password!);
-
+       localStorage.setItem('userId',data.id)
      
       this.router.navigate(['/users']);
     });

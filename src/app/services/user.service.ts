@@ -29,11 +29,22 @@ export class UserService {
   register(usuario: any) {
     return this.httpClient.post('http://localhost:3000/user', usuario);
   }
-
+  
+  crearPost(post:any){
+    console.log('mi post',post)
+  return this.httpClient.post('http://localhost:3000/post',post)
+  }
   isLoggedIn(): boolean {
     // Aquí implementa la lógica para verificar si el usuario está autenticado.
     // Por ejemplo, leyendo los datos de usuario del almacenamiento local.
     const userData = localStorage.getItem('username');
     return !!userData;
+  }
+  getUser(username:any){
+    return this.httpClient.get(`http://localhost:3000/user/getuser/${username}`)
+  }
+  getPostUser(){
+    const userData = localStorage.getItem('username');
+    return this.httpClient.get(`http://localhost:3000/user/getuser/${userData}`)
   }
 }

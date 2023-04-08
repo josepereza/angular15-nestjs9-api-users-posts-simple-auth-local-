@@ -46,6 +46,21 @@ export class UserService {
     return user;
   }
 
+  async getUserPost(username: string) {
+    const user = await this.usersRepository.find({
+      where: {
+        username,
+      },
+      relations: {
+        posts: true,
+      },
+    });
+    if (!user) {
+      throw new NotFoundException('usuario no existe');
+    }
+    return user;
+  }
+
   async update(id: number, updateUserDto: UpdateUserDto) {
     return await this.usersRepository.update({ id }, { ...updateUserDto });
   }
